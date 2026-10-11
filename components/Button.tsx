@@ -1,4 +1,4 @@
-import { Icon } from "./Icon"
+import { Icon, IconName } from "./Icon"
 
 interface ButtonProps {
   children: React.ReactNode
@@ -9,7 +9,7 @@ interface ButtonProps {
   onClick?: () => void
   className?: string
   disabled?: boolean
-  icon?: string
+  icon?: IconName
   iconSize?: number
   fullWidth?: boolean
 }
