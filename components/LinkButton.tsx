@@ -1,5 +1,3 @@
-import { Icon } from "./Icon"
-
 interface LinkButtonProps {
   href: string
   children: React.ReactNode

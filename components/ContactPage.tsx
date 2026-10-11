@@ -11,7 +11,7 @@ export function ContactPage() {
             CONTACT & SUPPORT
           </span>
           <h1 className="max-w-200 mx-auto mt-4 mb-4 text-[clamp(40px,5vw,58px)] leading-[1.12] tracking-tight">
-            Let's talk about your pharmacy
+            Let&apos;s talk about your pharmacy
           </h1>
           <p className="max-w-175 mx-auto mb-0 text-[17px] text-gray-500">
             Request a personalized demonstration or ask a practical question
