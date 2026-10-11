@@ -1,5 +1,5 @@
 import { Icon } from "./Icon"
-import { LinkButton } from "./LinkButton"
+import { Button } from "./Button"
 
 export function Support() {
   const items = [
@@ -26,39 +26,39 @@ export function Support() {
   ]
 
   return (
-    <section className="section support-section py-[112px_0] pt-0">
-      <div className="container mx-auto max-w-295 min-w-[calc(100%-40px)]">
-        <div className="section-heading max-w-162.5 mb-14 text-center mx-auto">
-          <span className="eyebrow inline-flex items-center gap-2 text-blue-600 text-[12px] font-extrabold tracking-[0.12em]">
-            <i className="w-1.5 h-1.5 rounded-full bg-blue-600 shadow-[0_0_0_5px_#dbeafe]" />
+    <section className="section support-section py-24 bg-gray-50">
+      <div className="container mx-auto max-w-7xl min-w-[calc(100%-40px)]">
+        <div className="section-heading max-w-2xl mb-16 text-center mx-auto">
+          <span className="eyebrow inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-green-700 text-xs font-extrabold tracking-[0.12em]">
+            <i className="w-2 h-2 rounded-full bg-[#54cc3a] shadow-[0_0_0_5px_#dcfce7]" />
             HELP WHEN YOU NEED IT
           </span>
-          <h2 className="mt-3.5 mb-4 text-[clamp(32px,3.6vw,46px)] leading-[1.17] tracking-tight">
+          <h2 className="mt-6 mb-4 text-4xl sm:text-5xl font-bold tracking-tight">
             Support that meets you where you are
           </h2>
-          <p className="mb-0 text-[17px] text-gray-500">
+          <p className="mb-0 text-lg text-gray-600">
             Choose the learning or contact channel that works best for your
             question.
           </p>
         </div>
-        <div className="support-grid grid grid-cols-4 border border-gray-200 rounded-[14px] overflow-hidden">
+        <div className="support-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((x) => (
             <article
               key={x[1]}
-              className="py-7 px-7 border-r border-gray-200 last:border-0"
+              className="p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow"
             >
-              <span className="text-blue-600">
-                <Icon name={x[0] as any} />
+              <span className="text-[#54cc3a]">
+                <Icon name={x[0] as "support" | "play" | "email" | "users"} />
               </span>
-              <h3 className="mt-4 mb-2 text-[15px]">{x[1]}</h3>
-              <p className="mb-0 text-[13px] text-gray-500">{x[2]}</p>
+              <h3 className="mt-4 mb-2 text-lg font-bold">{x[1]}</h3>
+              <p className="mb-0 text-sm text-gray-600">{x[2]}</p>
             </article>
           ))}
         </div>
-        <div className="center-action flex justify-center mt-8">
-          <LinkButton href="/contact">
-            Get Help with Medicore <Icon name="arrow" size={17} />
-          </LinkButton>
+        <div className="center-action flex justify-center mt-10">
+          <Button href="/contact" icon="arrow" iconSize={17} size="lg">
+            Get Help with Medicore
+          </Button>
         </div>
       </div>
     </section>

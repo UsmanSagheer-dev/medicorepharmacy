@@ -1,7 +1,7 @@
 import { Icon } from "./Icon"
 
 interface MetricProps {
-  icon: string
+  icon: "receipt" | "boxes" | "alert" | "chart" | "users" | "medicine" | "activity" | "support" | "play" | "email" | "calendar" | "shield"
   label: string
   value: string
   trend?: string
@@ -18,7 +18,7 @@ export function Metric({ icon, label, value, trend, warning }: MetricProps) {
             : "text-blue-600 bg-blue-50"
         }`}
       >
-        <Icon name={icon as any} size={15} />
+        <Icon name={icon} size={15} />
       </span>
       <small className="text-gray-400">{label}</small>
       <strong className="mt-1.5 text-[12px]">{value}</strong>

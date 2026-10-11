@@ -1,135 +1,44 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Icon } from "./Icon"
-import { Logo } from "./Logo"
-import { LinkButton } from "./LinkButton"
-import { siteConfig } from "@/lib/data"
+import { useState } from "react";
+import { Icon } from "./Icon";
+import { Logo } from "./Logo";
+import { NavigationLinks } from "./NavigationLinks";
 
 export function Header() {
-  const [open, setOpen] = useState(false)
-  const close = () => setOpen(false)
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 h-19 bg-white/94 border-b border-gray-200/80 backdrop-blur-[14px]">
-      <div className="container mx-auto max-w-295 min-w-[calc(100%-40px)] h-full flex items-center justify-between">
+    <header className="sticky top-0 z-50 h-20 bg-white/95 border-b border-gray-200/80 backdrop-blur-lg">
+      <div className="container mx-auto max-w-7xl min-w-[calc(100%-40px)] h-full flex items-center justify-between px-5">
         <Logo />
         <button
-          className="hidden border-0 bg-transparent p-2 text-gray-900 lg:hidden"
+          className="flex border-0 bg-transparent p-2 text-gray-900 lg:hidden"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          <Icon name={open ? "close" : "menu"} size={22} />
+          <Icon name={open ? "close" : "menu"} size={24} />
         </button>
         <nav
           className={`${
             open ? "open" : ""
-          } hidden lg:flex items-center gap-7.25 text-sm font-semibold`}
+          } hidden lg:flex items-center gap-8 text-sm font-semibold`}
           aria-label="Primary navigation"
         >
-          <a
-            href="/#features"
-            onClick={close}
-            className="text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Features
-          </a>
-          <a
-            href="/#how-it-works"
-            onClick={close}
-            className="text-gray-600 transition-colors hover:text-blue-600"
-          >
-            How It Works
-          </a>
-          <a
-            href="/pricing"
-            onClick={close}
-            className="text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Pricing
-          </a>
-          <a
-            href="/tutorials"
-            onClick={close}
-            className="text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Tutorials
-          </a>
-          <a
-            href="/faq"
-            onClick={close}
-            className="text-gray-600 transition-colors hover:text-blue-600"
-          >
-            FAQ
-          </a>
-          <span className="h-5 w-px bg-gray-200 ml-0.5" />
-          <a
-            href={siteConfig.appUrl || "/#trial"}
-            onClick={close}
-            className="text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Login
-          </a>
-          <LinkButton href="/#trial" onClick={close}>
-            Start Free Trial
-          </LinkButton>
+          <NavigationLinks onClose={close} />
         </nav>
         {/* Mobile menu */}
         <nav
           className={`${
             open ? "flex" : "hidden"
-          } absolute left-5 right-5 top-16.75 p-5 flex-col gap-1.5 bg-white border border-gray-200 rounded-xl shadow-[0_18px_40px_rgba(16,24,40,0.12)] lg:hidden`}
+          } absolute left-5 right-5 top-20 p-6 flex-col gap-2 bg-white border border-gray-200 rounded-xl shadow-2xl lg:hidden`}
           aria-label="Primary navigation"
         >
-          <a
-            href="/#features"
-            onClick={close}
-            className="py-2.5 px-1.5 text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Features
-          </a>
-          <a
-            href="/#how-it-works"
-            onClick={close}
-            className="py-2.5 px-1.5 text-gray-600 transition-colors hover:text-blue-600"
-          >
-            How It Works
-          </a>
-          <a
-            href="/pricing"
-            onClick={close}
-            className="py-2.5 px-1.5 text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Pricing
-          </a>
-          <a
-            href="/tutorials"
-            onClick={close}
-            className="py-2.5 px-1.5 text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Tutorials
-          </a>
-          <a
-            href="/faq"
-            onClick={close}
-            className="py-2.5 px-1.5 text-gray-600 transition-colors hover:text-blue-600"
-          >
-            FAQ
-          </a>
-          <span className="h-px w-full bg-gray-200 my-1.5" />
-          <a
-            href={siteConfig.appUrl || "/#trial"}
-            onClick={close}
-            className="py-2.5 px-1.5 text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Login
-          </a>
-          <LinkButton href="/#trial" onClick={close} className="w-full">
-            Start Free Trial
-          </LinkButton>
+          <NavigationLinks mobile onClose={close} />
         </nav>
       </div>
     </header>
-  )
+  );
 }

@@ -42,7 +42,7 @@ export function DashboardMockup() {
             <div className="flex flex-col">
               <b className="text-[13px]">Good morning, Ahmed</b>
               <small className="mt-0.5 text-gray-400">
-                Here is today's overview
+                Here is today&apos;s overview
               </small>
             </div>
             <button className="border-0 text-white bg-blue-600 rounded-[5px] py-1.5 px-2.5 text-[8px]">

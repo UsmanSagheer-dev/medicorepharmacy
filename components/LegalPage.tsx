@@ -1,5 +1,4 @@
 import { Icon } from "./Icon"
-import { LinkButton } from "./LinkButton"
 
 interface LegalPageProps {
   type: "privacy" | "terms"
@@ -20,7 +19,7 @@ export function LegalPage({ type }: LegalPageProps) {
             {privacy ? "Privacy Policy" : "Terms of Service"}
           </h1>
           <p className="max-w-175 mx-auto mb-0 text-[17px] text-gray-500">
-            This page is reserved for Medicore's reviewed legal documentation.
+            This page is reserved for Medicore&apos;s reviewed legal documentation.
           </p>
         </div>
       </section>
