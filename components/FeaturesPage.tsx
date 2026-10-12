@@ -39,7 +39,7 @@ export function FeaturesPage() {
       </section>
       <section className="section py-[112px_0]">
         <div className="container mx-auto max-w-295 min-w-[calc(100%-40px)]">
-          <div className="capability-grid grid grid-cols-3 gap-4">
+          <div className="capability-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {full.map((x, i) => (
               <article
                 key={x}

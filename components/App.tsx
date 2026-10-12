@@ -126,7 +126,7 @@ export function App() {
   return (
     <>
       <Header />
-      <div className="min-h-screen px-3">{page}</div>
+      <div className="min-h-screen px-4 ">{page}</div>
       <Footer />
     </>
   )
