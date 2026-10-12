@@ -1,6 +1,12 @@
 import { Icon } from "./Icon"
-import { MiniPreview } from "./MiniPreview"
 import { featureGroups } from "@/lib/data"
+import { IMAGES } from "@/public/assets/images"
+
+const previewImages: Record<string, string> = {
+  billing: IMAGES.saleScreen.src,
+  inventory: IMAGES.medicineInventory.src,
+  alerts: IMAGES.dashboardMockup.src,
+}
 
 export function Features() {
   return (
@@ -59,12 +65,16 @@ export function Features() {
               </a>
             </div>
             <div
-              className={`preview-wrap relative p-8 bg-gray-50 border border-gray-200 rounded-2xl ${
+              className={`preview-wrap relative p-8 ${
                 i % 2 ? "lg:order-1" : ""
               }`}
             >
               <div className="absolute inset-4 border border-dashed border-gray-300 rounded-xl pointer-events-none after:content-['']" />
-              <MiniPreview type={f.preview} />
+              <img
+                src={previewImages[f.preview] }
+                alt={f.title}
+                className="w-full h-auto rounded-lg shadow-sm"
+              />
             </div>
           </div>
         ))}
