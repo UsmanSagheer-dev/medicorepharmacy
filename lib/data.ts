@@ -1,5 +1,5 @@
 export const siteConfig = {
-  appUrl: "",
+  appUrl: "https://medicore-hms.vercel.app/auth/login",
   demoEndpoint: "",
   trialLabel: "Free Trial",
 }
