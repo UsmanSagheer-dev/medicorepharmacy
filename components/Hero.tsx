@@ -16,12 +16,12 @@ export function Hero() {
         <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
           {/* Left: copy */}
           <div className="relative z-10">
-            <span className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-xs font-extrabold tracking-widest text-green-700">
+            <span className="inline-flex items-center gap-2 font-poppins  rounded-full bg-green-100 px-4 py-2 text-xs font-extrabold tracking-widest text-green-700">
               <i className="h-2 w-2 rounded-full bg-[#54cc3a] ring-4 ring-green-200" />
               PHARMACY MANAGEMENT SOFTWARE
             </span>
 
-            <h1 className="mt-8 mb-6 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-8 mb-6 max-w-4xl font-poppins  text-5xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
               Manage Your Pharmacy.
               <br />
               <span className="bg-linear-to-br from-[#54cc3a] to-[#4ab932] bg-clip-text text-transparent">

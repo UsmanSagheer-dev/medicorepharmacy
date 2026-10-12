@@ -1,37 +1,9 @@
 "use client"
 
-import { FormEvent, useState } from "react"
 import { Icon } from "./Icon"
-import { Button } from "./Button"
-import { siteConfig } from "@/lib/data"
+import { ContactForm } from "./ContactForm"
 
 export function DemoSection() {
-  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">(
-    "idle",
-  )
-
-  const submit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!siteConfig.demoEndpoint) {
-      setStatus("error")
-      return
-    }
-    setStatus("loading")
-    const form = new FormData(e.currentTarget)
-    try {
-      const response = await fetch(siteConfig.demoEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(form)),
-      })
-      if (!response.ok) throw new Error()
-      setStatus("sent")
-      e.currentTarget.reset()
-    } catch {
-      setStatus("error")
-    }
-  }
-
   return (
     <section className="section demo-section py-24 bg-white" id="demo">
       <div className="container mx-auto max-w-7xl min-w-[calc(100%-40px)]">
@@ -45,11 +17,20 @@ export function DemoSection() {
               <h2 className="mt-6 mb-4 text-4xl sm:text-5xl font-bold tracking-tight">
                 See Medicore Pharmacy in Action
               </h2>
-              <p className="mb-0 text-lg text-gray-600">
+              <p className="mb-3 text-lg text-gray-600">
                 Tell us about your medical store and the workflow you want to
                 improve. A team member can arrange a suitable walkthrough once
                 your preferred contact channel is configured.
               </p>
+              <a
+                href="https://wa.me/923049469130"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#54cc3a] font-semibold hover:underline"
+              >
+                <Icon name="support" />
+                Contact us on WhatsApp: 0304 9469130
+              </a>
             </div>
             <div className="demo-points space-y-6">
               <div className="flex gap-4">
@@ -87,112 +68,7 @@ export function DemoSection() {
               </div>
             </div>
           </div>
-          <form className="lead-form p-8 bg-white border border-gray-200 rounded-2xl shadow-xl" onSubmit={submit}>
-            <div className="field-row grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Full name
-                <input
-                  required
-                  name="name"
-                  placeholder="Your full name"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Store name
-                <input
-                  required
-                  name="store"
-                  placeholder="Pharmacy name"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-                />
-              </label>
-            </div>
-            <div className="field-row grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Phone number
-                <input
-                  required
-                  name="phone"
-                  type="tel"
-                  placeholder="+92 3XX XXXXXXX"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Email <span className="text-gray-400 font-medium">(optional)</span>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="name@example.com"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-                />
-              </label>
-            </div>
-            <div className="field-row grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Demo method
-                <select
-                  name="method"
-                  defaultValue="online"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
-                >
-                  <option value="online">Online demo</option>
-                  <option value="in-person">
-                    In-person (subject to availability)
-                  </option>
-                </select>
-              </label>
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Preferred date
-                <input
-                  name="date"
-                  type="date"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
-                />
-              </label>
-            </div>
-            <label className="flex flex-col gap-2 mb-4 text-gray-700 text-sm font-bold">
-              Anything specific you want to see?{" "}
-              <span className="text-gray-400 font-medium">(optional)</span>
-              <textarea
-                name="message"
-                rows={3}
-                placeholder="Tell us about your pharmacy or questions"
-                className="py-3 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-y placeholder:text-gray-400"
-              />
-            </label>
-            <Button
-              type="submit"
-              variant="primary"
-              fullWidth
-              icon="arrow"
-              iconSize={17}
-              size="lg"
-              disabled={status === "loading"}
-              className="mt-2"
-            >
-              {status === "loading" ? "Sending request…" : "Request a Free Demo"}
-            </Button>
-            {status === "sent" && (
-              <div
-                className="form-message success mt-4 py-3 px-4 rounded-lg text-sm leading-normal text-green-700 bg-green-50 border border-green-200"
-                role="status"
-              >
-                Your request was sent. The team will contact you to confirm—this
-                is not yet a booking.
-              </div>
-            )}
-            {status === "error" && (
-              <div
-                className="form-message error mt-4 py-3 px-4 rounded-lg text-sm leading-normal text-red-700 bg-red-50 border border-red-200"
-                role="alert"
-              >
-                Demo requests are not connected yet. Configure VITE_DEMO_ENDPOINT
-                or contact Medicore through a configured support channel.
-              </div>
-            )}
-          </form>
+          <ContactForm formType="demo" />
         </div>
       </div>
     </section>

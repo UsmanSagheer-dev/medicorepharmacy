@@ -1,19 +1,9 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { Icon } from "./Icon";
-import { Button } from "./Button";
-import { siteConfig } from "@/lib/data";
+import { ContactForm } from "./ContactForm";
 
 export function TrialSection() {
-  const [state, setState] = useState<"idle" | "error">("idle");
-
-  const submit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (siteConfig.appUrl) window.location.href = siteConfig.appUrl;
-    else setState("error");
-  };
-
   return (
     <section
       className="section conversion-section py-24 bg-linear-to-b from-gray-50 to-white"
@@ -65,82 +55,7 @@ export function TrialSection() {
               </span>
             </div>
           </div>
-          <form
-            className="lead-form py-10 px-8 bg-white border border-gray-200 rounded-2xl shadow-xl"
-            onSubmit={submit}
-          >
-            <div className="form-heading flex flex-col mb-6">
-              <span className="text-2xl font-extrabold text-gray-900">
-                Request {siteConfig.trialLabel}
-              </span>
-              <small className="mt-2 text-gray-500">
-                Tell us where to send setup details.
-              </small>
-            </div>
-            <label className="flex flex-col gap-2 mb-4 text-gray-700 text-sm font-bold">
-              Full name
-              <input
-                name="name"
-                required
-                placeholder="e.g. Ahmed Khan"
-                className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-              />
-            </label>
-            <label className="flex flex-col gap-2 mb-4 text-gray-700 text-sm font-bold">
-              Pharmacy or medical store
-              <input
-                name="pharmacy"
-                required
-                placeholder="e.g. City Medical Store"
-                className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-              />
-            </label>
-            <div className="field-row grid grid-cols-2 gap-4 mb-4">
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Phone number
-                <input
-                  name="phone"
-                  required
-                  type="tel"
-                  placeholder="+92 3XX XXXXXXX"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-gray-700 text-sm font-bold">
-                Email address
-                <input
-                  name="email"
-                  required
-                  type="email"
-                  placeholder="name@example.com"
-                  className="h-12 px-4 outline-none text-gray-900 bg-white border border-gray-300 rounded-lg transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 placeholder:text-gray-400"
-                />
-              </label>
-            </div>
-            <Button
-              type="submit"
-              variant="primary"
-              fullWidth
-              icon="arrow"
-              iconSize={17}
-              size="lg"
-              className="mt-2"
-            >
-              Request Trial Access
-            </Button>
-            <p className="form-caption mt-4 text-center text-xs text-gray-500">
-              By continuing, you agree to be contacted about Medicore Pharmacy.
-            </p>
-            {state === "error" && (
-              <div
-                className="form-message error mt-4 py-3 px-4 rounded-lg text-sm leading-normal text-red-700 bg-red-50 border border-red-200"
-                role="alert"
-              >
-                Trial registration is not connected yet. Configure VITE_APP_URL
-                to enable this action.
-              </div>
-            )}
-          </form>
+          <ContactForm formType="trial" />
         </div>
       </div>
     </section>
