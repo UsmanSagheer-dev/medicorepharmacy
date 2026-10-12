@@ -76,6 +76,7 @@ export function Hero() {
               width={1200}
               height={800}
               className="w-full rounded-2xl"
+              loading="eager"
             />
           </div>
         </div>
