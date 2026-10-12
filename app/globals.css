@@ -12,3 +12,16 @@ summary::-webkit-details-marker {
 details[open] > summary > .faq-plus {
   transform: rotate(45deg);
 }
+
+@keyframes whatsapp-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.whatsapp-bounce {
+  animation: whatsapp-bounce 2s ease-in-out infinite;
+}
