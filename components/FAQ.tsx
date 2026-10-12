@@ -1,7 +1,7 @@
-import { faqs } from "@/lib/data"
+import { faqs } from "@/lib/data";
 
 interface FAQProps {
-  standalone?: boolean
+  standalone?: boolean;
 }
 
 export function FAQ({ standalone = false }: FAQProps) {
@@ -49,5 +49,5 @@ export function FAQ({ standalone = false }: FAQProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }
