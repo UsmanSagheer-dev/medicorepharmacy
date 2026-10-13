@@ -12,8 +12,8 @@ export function Footer() {
 
   return (
     <footer className="px-4 sm:px-6 lg:px-8 py-17.5 text-gray-300 bg-[#0b1220]">
-      <div className="container mx-auto max-w-295">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12 lg:gap-16.25">
+      <div className="container mx-auto max-w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12 lg:gap-16.25">
           <div className="footer-brand">
             <Logo />
             <p className="max-w-90 mt-4 text-[13px] text-gray-400">
@@ -21,10 +21,7 @@ export function Footer() {
               everyday pharmacy operations.
             </p>
           </div>
-         
-        </div>
-        <div className="grid grid-cols-3 mt-2 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12 lg:gap-16.25">
-         <div className="flex flex-col gap-3.5">
+          <div className="flex flex-col gap-3.5">
             <h3 className="my-1 text-white text-xs font-bold">Product</h3>
             <a
               href="/features"
@@ -87,7 +84,7 @@ export function Footer() {
               Terms
             </a>
           </div>
-          </div>
+        </div>
         <div className="flex flex-col sm:flex-row justify-between mt-14 pt-5.5 border-t border-gray-800 text-[10px] text-gray-500 gap-2">
           <span>© {year} Medicore Pharmacy.</span>
           <span>Built for modern medical stores in Pakistan.</span>

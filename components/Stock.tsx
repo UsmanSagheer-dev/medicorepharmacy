@@ -1,7 +1,7 @@
 interface StockProps {
-  name: string
-  stock: string
-  low?: boolean
+  name: string;
+  stock: string;
+  low?: boolean;
 }
 
 export function Stock({ name, stock, low }: StockProps) {
@@ -20,5 +20,5 @@ export function Stock({ name, stock, low }: StockProps) {
         </em>
       )}
     </div>
-  )
+  );
 }
