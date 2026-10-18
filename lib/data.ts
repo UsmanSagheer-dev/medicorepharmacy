@@ -121,111 +121,114 @@ export const tutorialCategories = [
   "Getting Started",
   "Billing",
   "Inventory",
+  "Inventory & Sales",
   "Reports",
 ]
 
 export const tutorials = [
-  {
-    slug: "getting-started",
-    category: "Getting Started",
-    title: "Setting Up Your Pharmacy Account",
-    description:
-      "Learn how to register your pharmacy, configure basic settings, and prepare for your first sale.",
-    duration: "5 min",
-    level: "Beginner",
-    language: "Urdu",
-    steps: [
-      "Sign up for a Medicore account",
-      "Enter your pharmacy details",
-      "Configure your business settings",
-      "Add your first user accounts",
-    ],
-  },
-  {
-    slug: "adding-medicines",
-    category: "Inventory",
-    title: "Adding Medicines to Your System",
-    description:
-      "Step-by-step guide to adding medicine records, setting up batches, and managing supplier information.",
-    duration: "8 min",
-    level: "Beginner",
-    language: "Urdu",
-    steps: [
-      "Navigate to the Medicines section",
-      "Click 'Add Medicine' and enter details",
-      "Set up batch information",
-      "Link to supplier records",
-      "Save and verify the record",
-    ],
-  },
-  {
-    slug: "processing-sales",
-    category: "Billing",
-    title: "Processing a Sale",
-    description:
-      "Learn the complete workflow from searching medicines to generating receipts and updating stock.",
-    duration: "6 min",
-    level: "Beginner",
-    language: "Urdu",
-    steps: [
-      "Open the billing section",
-      "Search for medicines by name or barcode",
-      "Add items to the cart",
-      "Set quantities and apply discounts",
-      "Complete the sale and print receipt",
-    ],
-  },
-  {
-    slug: "managing-stock",
-    category: "Inventory",
-    title: "Managing Stock Levels",
-    description:
-      "How to monitor inventory, set reorder points, and handle stock adjustments efficiently.",
-    duration: "7 min",
-    level: "Intermediate",
-    language: "Urdu",
-    steps: [
-      "Review current stock levels",
-      "Identify low-stock items",
-      "Set reorder thresholds",
-      "Record stock adjustments",
-      "Generate stock reports",
-    ],
-  },
-  {
-    slug: "expiry-tracking",
-    category: "Inventory",
-    title: "Tracking Expiry Dates",
-    description:
-      "Configure expiry date tracking, set up alerts, and manage expiring stock effectively.",
-    duration: "5 min",
-    level: "Intermediate",
-    language: "Urdu",
-    steps: [
-      "Enter expiry dates for batches",
-      "Configure expiry alert settings",
-      "Review expiring items report",
-      "Plan for expiry management",
-      "Document disposal procedures",
-    ],
-  },
-  {
-    slug: "generating-reports",
-    category: "Reports",
-    title: "Generating Business Reports",
-    description:
-      "Create sales reports, inventory summaries, and purchase analytics to understand your pharmacy performance.",
-    duration: "9 min",
-    level: "Intermediate",
-    language: "Urdu",
-    steps: [
-      "Navigate to the Reports section",
-      "Select report type and date range",
-      "Customize report parameters",
-      "Generate and review the report",
-      "Export or print as needed",
-    ],
-  },
+  // {
+  //   slug: "getting-started",
+  //   category: "Getting Started",
+  //   title: "Setting Up Your Pharmacy Account",
+  //   description:
+  //     "Learn how to register your pharmacy, configure basic settings, and prepare for your first sale.",
+  //   duration: "5 min",
+  //   level: "Beginner",
+  //   language: "Urdu",
+  //   steps: [
+  //     "Sign up for a Medicore account",
+  //     "Enter your pharmacy details",
+  //     "Configure your business settings",
+  //     "Add your first user accounts",
+  //   ],
+  // },
+{
+  slug: "medicine-inventory-and-sales",
+  category: "Inventory & Sales",
+  title: "Medicine Inventory, Opening Stock & Sales",
+  description:
+    "Learn how to add medicines, manage opening stock, maintain inventory, and sell medicines using Medicore Pharmacy Management Software.",
+  duration: "8 min",
+  level: "Beginner",
+  language: "Urdu",
+  videoUrl: "https://youtu.be/gRrRjlpqU3E",
+  steps: [
+    "Navigate to the Medicines section",
+    "Add medicine details to the system",
+    "Manage opening stock and inventory",
+    "Track medicine stock quantities",
+    "Sell medicines through the pharmacy sales system",
+    "Verify inventory updates after sales",
+  ],
+},
+  // {
+  //   slug: "processing-sales",
+  //   category: "Billing",
+  //   title: "Processing a Sale",
+  //   description:
+  //     "Learn the complete workflow from searching medicines to generating receipts and updating stock.",
+  //   duration: "6 min",
+  //   level: "Beginner",
+  //   language: "Urdu",
+  //   steps: [
+  //     "Open the billing section",
+  //     "Search for medicines by name or barcode",
+  //     "Add items to the cart",
+  //     "Set quantities and apply discounts",
+  //     "Complete the sale and print receipt",
+  //   ],
+  // },
+  // {
+  //   slug: "managing-stock",
+  //   category: "Inventory",
+  //   title: "Managing Stock Levels",
+  //   description:
+  //     "How to monitor inventory, set reorder points, and handle stock adjustments efficiently.",
+  //   duration: "7 min",
+  //   level: "Intermediate",
+  //   language: "Urdu",
+  //   steps: [
+  //     "Review current stock levels",
+  //     "Identify low-stock items",
+  //     "Set reorder thresholds",
+  //     "Record stock adjustments",
+  //     "Generate stock reports",
+  //   ],
+  // },
+  // {
+  //   slug: "expiry-tracking",
+  //   category: "Inventory",
+  //   title: "Tracking Expiry Dates",
+  //   description:
+  //     "Configure expiry date tracking, set up alerts, and manage expiring stock effectively.",
+  //   duration: "5 min",
+  //   level: "Intermediate",
+  //   language: "Urdu",
+  //   steps: [
+  //     "Enter expiry dates for batches",
+  //     "Configure expiry alert settings",
+  //     "Review expiring items report",
+  //     "Plan for expiry management",
+  //     "Document disposal procedures",
+  //   ],
+  // },
+  // {
+  //   slug: "generating-reports",
+  //   category: "Reports",
+  //   title: "Generating Business Reports",
+  //   description:
+  //     "Create sales reports, inventory summaries, and purchase analytics to understand your pharmacy performance.",
+  //   duration: "9 min",
+  //   level: "Intermediate",
+  //   language: "Urdu",
+  //   steps: [
+  //     "Navigate to the Reports section",
+  //     "Select report type and date range",
+  //     "Customize report parameters",
+  //     "Generate and review the report",
+  //     "Export or print as needed",
+  //   ],
+  // },
 ]
 
 export const faqs = [
@@ -263,4 +266,6 @@ export const faqs = [
   },
 ]
 
-export type Tutorial = (typeof tutorials)[0]
+export type Tutorial = (typeof tutorials)[0] & {
+  videoUrl?: string
+}

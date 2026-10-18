@@ -6,21 +6,48 @@ interface TutorialCardProps {
 }
 
 export function TutorialCard({ tutorial }: TutorialCardProps) {
+  const getYouTubeThumbnail = (url: string) => {
+    if (!url) return null
+    const videoId = url.includes('youtu.be/')
+      ? url.split('youtu.be/')[1]?.split('?')[0]
+      : url.includes('youtube.com/watch?v=')
+      ? url.split('v=')[1]?.split('&')[0]
+      : null
+    return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null
+  }
+
+  const thumbnail = (tutorial as any).videoUrl ? getYouTubeThumbnail((tutorial as any).videoUrl) : null
+
   return (
     <a
       className="tutorial-card overflow-hidden bg-white border border-gray-200 rounded-[13px] transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(16,24,40,0.09)]"
       href={`/tutorials/${tutorial.slug}`}
     >
       <div className="tutorial-thumb relative h-49 grid place-items-center overflow-hidden bg-blue-50">
-        <div className="thumb-ui absolute inset-[29px_25px_-15px] py-4.5 px-4.5 bg-white border border-gray-200 rounded-[9px] -rotate-2 shadow-[0_14px_25px_rgba(16,24,40,0.12)]">
-          <span className="block w-[45%] h-2.25 mb-3 bg-blue-100 rounded-[3px]" />
-          <span className="block w-[87%] h-12.5 bg-gray-100" />
-          <span className="block w-[72%] h-8 mt-3 bg-blue-50" />
-        </div>
-        <span className="play-button relative w-13 h-13 grid place-items-center text-white bg-blue-600 border-[5px] border-white/80 rounded-full shadow-[0_8px_20px_rgba(37,99,235,0.3)]">
-          <Icon name="play" size={19} />
-        </span>
-        <small className="absolute right-2.5 bottom-2.5 py-1 px-1.5 text-white bg-gray-900/75 rounded-sm text-[9px]">
+        {thumbnail ? (
+          <>
+            <img
+              src={thumbnail}
+              alt={tutorial.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <span className="play-button relative w-13 h-13 grid place-items-center text-white bg-blue-600 border-[5px] border-white/80 rounded-full shadow-[0_8px_20px_rgba(37,99,235,0.3)] z-10">
+              <Icon name="play" size={19} />
+            </span>
+          </>
+        ) : (
+          <>
+            <div className="thumb-ui absolute inset-[29px_25px_-15px] py-4.5 px-4.5 bg-white border border-gray-200 rounded-[9px] -rotate-2 shadow-[0_14px_25px_rgba(16,24,40,0.12)]">
+              <span className="block w-[45%] h-2.25 mb-3 bg-blue-100 rounded-[3px]" />
+              <span className="block w-[87%] h-12.5 bg-gray-100" />
+              <span className="block w-[72%] h-8 mt-3 bg-blue-50" />
+            </div>
+            <span className="play-button relative w-13 h-13 grid place-items-center text-white bg-blue-600 border-[5px] border-white/80 rounded-full shadow-[0_8px_20px_rgba(37,99,235,0.3)]">
+              <Icon name="play" size={19} />
+            </span>
+          </>
+        )}
+        <small className="absolute right-2.5 bottom-2.5 py-1 px-1.5 text-white bg-gray-900/75 rounded-sm text-[9px] z-10">
           {tutorial.duration}
         </small>
       </div>

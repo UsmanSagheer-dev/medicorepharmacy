@@ -27,20 +27,32 @@ export function TutorialPage({ slug }: TutorialPageProps) {
         </div>
         <div className="lesson-grid grid grid-cols-[1fr_300px] gap-7 items-start">
           <article className="min-w-0">
-            <div className="video-placeholder aspect-video flex flex-col justify-center items-center py-8 text-center text-white bg-gray-900 rounded-[14px]">
-              <span className="video-icon w-15 h-15 grid place-items-center text-white bg-blue-600 rounded-full">
-                <Icon name="play" size={25} />
-              </span>
-              <h2 className="mt-5 mb-2">Official video coming soon</h2>
-              <p className="max-w-140 mb-0 text-gray-400 text-[14px]">
-                This lesson structure is ready for an approved YouTube or
-                video-hosting embed. No unofficial training video has been
-                substituted.
-              </p>
-              <small className="mt-4 text-gray-500">
-                {tutorial.language}-first · English subtitles when available
-              </small>
-            </div>
+            {tutorial.videoUrl ? (
+              <div className="aspect-video rounded-[14px] overflow-hidden">
+                <iframe
+                  src={tutorial.videoUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('youtube.com/watch?v=', 'youtube.com/embed/')}
+                  title={tutorial.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="video-placeholder aspect-video flex flex-col justify-center items-center py-8 text-center text-white bg-gray-900 rounded-[14px]">
+                <span className="video-icon w-15 h-15 grid place-items-center text-white bg-blue-600 rounded-full">
+                  <Icon name="play" size={25} />
+                </span>
+                <h2 className="mt-5 mb-2">Official video coming soon</h2>
+                <p className="max-w-140 mb-0 text-gray-400 text-[14px]">
+                  This lesson structure is ready for an approved YouTube or
+                  video-hosting embed. No unofficial training video has been
+                  substituted.
+                </p>
+                <small className="mt-4 text-gray-500">
+                  {tutorial.language}-first · English subtitles when available
+                </small>
+              </div>
+            )}
             <div className="lesson-title mt-5 py-8 px-8 bg-white border border-gray-200 rounded-[13px]">
               <span className="tutorial-category text-blue-600 text-[10px] font-extrabold tracking-[0.08em] uppercase">
                 {tutorial.category}
