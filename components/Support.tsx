@@ -1,5 +1,5 @@
-import { Icon } from "./Icon"
-import { Button } from "./Button"
+import { Icon } from "./Icon";
+import { Button } from "./Button";
 
 export function Support() {
   const items = [
@@ -23,7 +23,7 @@ export function Support() {
       "Guided onboarding",
       "Discuss setup assistance and availability with the Medicore team.",
     ],
-  ]
+  ];
 
   return (
     <section className="section support-section py-24 bg-gray-50">
@@ -62,5 +62,5 @@ export function Support() {
         </div>
       </div>
     </section>
-  )
+  );
 }
