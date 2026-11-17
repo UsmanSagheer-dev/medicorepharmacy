@@ -1,5 +1,5 @@
 export const siteConfig = {
-  appUrl: "https://medicore-hms.vercel.app/auth/login",
+  appUrl: "https://medicore-hms.vercel.app",
   demoEndpoint: "",
   trialLabel: "Free Trial",
 }
@@ -143,6 +143,27 @@ export const tutorials = [
   //   ],
   // },
 {
+  slug: "medicore-introduction-onboarding",
+  category: "Getting Started",
+  title: "Medicore Introduction & Complete Onboarding Guide",
+  description:
+    "Get started with Medicore. Learn about the pharmacy management system, create your account, complete pharmacy registration, and access your dashboard through a simple step-by-step onboarding process.",
+  duration: "5 min 24 sec",
+  level: "Beginner",
+  videoUrl: "https://youtu.be/6_Fv60QtxKM?si=8_iodzxy-QPAZHnf",
+  language: "Urdu",
+  steps: [
+    "Introduction to Medicore Pharmacy Management System",
+    "Open the Medicore website",
+    "Create your Medicore account",
+    "Verify your email address",
+    "Complete pharmacy onboarding details",
+    "Submit your pharmacy information",
+    "Access your pharmacy dashboard",
+    "Get started with Medicore",
+  ],
+},
+{
   slug: "medicine-inventory-and-sales",
   category: "Inventory & Sales",
   title: "Medicine Inventory, Opening Stock & Sales",
@@ -161,23 +182,7 @@ export const tutorials = [
     "Verify inventory updates after sales",
   ],
 },
-  // {
-  //   slug: "processing-sales",
-  //   category: "Billing",
-  //   title: "Processing a Sale",
-  //   description:
-  //     "Learn the complete workflow from searching medicines to generating receipts and updating stock.",
-  //   duration: "6 min",
-  //   level: "Beginner",
-  //   language: "Urdu",
-  //   steps: [
-  //     "Open the billing section",
-  //     "Search for medicines by name or barcode",
-  //     "Add items to the cart",
-  //     "Set quantities and apply discounts",
-  //     "Complete the sale and print receipt",
-  //   ],
-  // },
+
   // {
   //   slug: "managing-stock",
   //   category: "Inventory",
